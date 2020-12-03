@@ -1,0 +1,383 @@
+@charset "UTF-8";
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+/*PC向け*/
+@media screen and (min-width: 767px) {
+    body{
+        color:#000000;
+        font-family: 'Futura PT','Didact Gothic','Renner*', Arial, sans-serif;
+        font-size: 20pt;
+        font-weight: normal;
+    }
+
+    /*  .section-wrap
+    -------------------------------------*/
+    .section-wrap{
+        height: 100%;
+        width: 100%;
+        margin: 2.5% 2.5% 0 2.5%;
+        align-items: center;
+    }
+
+    /*  .face_area
+    -------------------------------------*/
+    .face_area{
+        display: flex;
+        width: 95%;
+        height: 492px;
+        flex-flow: wrap;
+    }
+    .face_lt{
+        display: flex;
+        background: #87E0F4;
+        width: 33.3%;
+        height: auto;
+        justify-content: flex-end;
+    }
+    .face_ct{
+        display: flex;
+        background: #000000;
+        width: 33.3%;
+        height: auto;
+        justify-content: flex-end;
+    }
+    .face_rt{
+        display: flex;
+        background: #009999;
+        width: 33.3%;
+        height: auto;
+        justify-content: flex-end;
+    }
+    .face_lb{
+        display: flex;
+        background: #F2C4C4;
+        width: 33.3%;
+        height: auto;
+        justify-content: flex-end;
+    }
+    .face_cb{
+        display: flex;
+        background: #5833C0;
+        width: 33.3%;
+        height: auto;
+        justify-content: flex-end;
+    }
+    .face_rb{
+        display: flex;
+        background: #EAE38B;
+        width: 33.3%;
+        height: auto;
+        justify-content: flex-end;
+    }
+
+    /*  hover対応
+    -------------------------------------*/
+    figure {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+    figcaption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.6);
+        -webkit-transition: .3s;
+        transition: .3s;
+        opacity: 0;
+        color: #ffffff;
+        font-size: 20pt;
+        letter-spacing: 0.2em;
+        display: table;
+    }
+    figure:hover figcaption {
+        opacity: 1;
+    }
+    h3{
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    h2{
+        font-family: 'Holland';
+        font-size: 20px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    /*  画像サイズトリミング
+    -------------------------------------*/
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover; /* この一行を追加するだけ！ */
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    /*  .message_area
+    -------------------------------------*/
+    .message_area{
+        display: flex;
+        background-color: #ffffff;
+        height: 45.5px;
+        width: 95%;
+        /* margin: 2.5% 2.5% 11.4% 2.5%;  */
+        margin-top: 2.5%;
+        margin-bottom: 11.4%;
+        border-top: 2px solid #000000;
+        border-bottom: 2px solid #000000;
+        overflow: hidden;
+    }
+
+    .message{
+        font-size: 15pt;
+        font-weight: normal;
+        padding: 10px;
+        
+        width: 95%;
+        padding-left: 20px;
+        white-space: nowrap;
+
+        animation-name: marquee;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes message {
+        from    { transform: translate(0%); } 
+        100%,to { transform: translate(-100%); }
+    }
+
+    /* 表示領域に合わせてサイズと余白を設定 */
+    .marquee {
+        width: 300px;
+        padding-left: 300px;
+        white-space: nowrap;
+
+        animation-name: marquee;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    @keyframes marquee {
+        from    { transform: translate(0%); } 
+        100%,to { transform: translate(-100%); }
+    }
+
+    /*  .copyright_area
+    -------------------------------------*/
+    .copyright_area{
+        height:77px;
+        width: 95%;
+        display: table;
+    }
+    .copyright{
+        font-size: 10pt;
+        margin: 0 auto;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+    }
+}
+
+/*スマホ向け*/
+@media screen and (max-width: 767px) { 
+    body{
+        color:#000000;
+        font-family: 'Futura PT','Didact Gothic','Renner*', Arial, sans-serif;
+        font-size: 15pt;
+        font-weight: normal;
+    }
+
+    /*  .section-wrap
+    -------------------------------------*/
+    .section-wrap{
+        height: 100%;
+        width: 100%;
+        margin: 2.5% 2.5% 0 2.5%;
+        align-items: center;
+    }
+
+    /*  .face_area
+    -------------------------------------*/
+    .face_area{
+        display: flex;
+        width: 95%;
+        height: 492px;
+        flex-flow: wrap;
+    }
+    .face_lt{
+        display: flex;
+        background: #87E0F4;
+        width: 50%;
+        height: auto;
+        justify-content: flex-end;
+    }
+    .face_ct{
+        display: flex;
+        background: #000000;
+        width: 50%;
+        height: auto;
+        justify-content: flex-end;
+    }
+    .face_rt{
+        display: flex;
+        background: #009999;
+        width: 50%;
+        height: auto;
+        justify-content: flex-end;
+    }
+    .face_lb{
+        display: flex;
+        background: #F2C4C4;
+        width: 50%;
+        height: auto;
+        justify-content: flex-end;
+    }
+    .face_cb{
+        display: flex;
+        background: #5833C0;
+        width: 50%;
+        height: auto;
+        justify-content: flex-end;
+    }
+    .face_rb{
+        display: flex;
+        background: #EAE38B;
+        width: 50%;
+        height: auto;
+        justify-content: flex-end;
+    }
+
+    /*  hover対応
+    -------------------------------------*/
+    figure {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+    figcaption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.6);
+        -webkit-transition: .3s;
+        transition: .3s;
+        opacity: 0;
+        color: #ffffff;
+        font-size: 13pt;
+        letter-spacing: 0.2em;
+        display: table;
+    }
+    figure:hover figcaption {
+        opacity: 1;
+    }
+    h3{
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    h2{
+        font-family: 'Holland';
+        font-size: 10pt;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+
+    /*  画像サイズトリミング
+    -------------------------------------*/
+    img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover; /* この一行を追加するだけ！ */
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    /*  .message_area
+    -------------------------------------*/
+    .message_area{
+        display: flex;
+        background-color: #ffffff;
+        height: 38px;
+        width: 95%;
+        /* margin: 2.5% 2.5% 11.4% 2.5%;  */
+        margin-top: 2.5%;
+        margin-bottom: 11.4%;
+        border-top: 2px solid #000000;
+        border-bottom: 2px solid #000000;
+        overflow: hidden;
+
+    }
+
+    .message{
+        font-size: 12pt;
+        font-weight: normal;
+        padding: 10px;
+        width: 95%;
+        padding-left: 20px;
+        white-space: nowrap;
+
+        animation-name: marquee;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes message {
+        from    { transform: translate(0%); } 
+        100%,to { transform: translate(-100%); }
+    }
+
+    /* 表示領域に合わせてサイズと余白を設定 */
+    .marquee {
+        width: 300px;
+        padding-left: 300px;
+        white-space: nowrap;
+
+        animation-name: marquee;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    @keyframes marquee {
+        from    { transform: translate(0%); } 
+        100%,to { transform: translate(-100%); }
+    }
+
+    /*  .copyright_area
+    -------------------------------------*/
+    .copyright_area{
+        height:77px;
+        width: 95%;
+        /* background-color: #F2C4C4; */
+        display: table;
+        
+    }
+    .copyright{
+        font-size: 8pt;
+        margin: 0 auto;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        
+    }
+}
